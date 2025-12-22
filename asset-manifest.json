@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/UScheduled/static/css/main.5686138b.css",
+    "main.js": "/UScheduled/static/js/main.3f8d2dae.js",
+    "index.html": "/UScheduled/index.html",
+    "main.5686138b.css.map": "/UScheduled/static/css/main.5686138b.css.map",
+    "main.3f8d2dae.js.map": "/UScheduled/static/js/main.3f8d2dae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5686138b.css",
+    "static/js/main.3f8d2dae.js"
+  ]
+}
