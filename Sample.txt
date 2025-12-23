@@ -1,0 +1,18 @@
+ Nguyễn Thanh Trúc   Logout    
+Trang Chủ
+Sinh Viên
+Thư Viện
+Hướng dẫn
+Kết Quả ĐKHP  Sinh Viên  /  Đăng Ký Học Phần  /  Kết Quả ĐKHP
+
+HK1 2025-2026
+CÁC MÔN ĐÃ ĐĂNG KÝ
+24127137 - NGUYỄN THANH TRÚC
+#	Mã MH	Tên MH	TC	Lớp HP	Học Kỳ	TA	HL	I2	Lịch LT	Lịch TH	GV-LT	GV-TH	GV-TG
+1	BAA00005	Kinh tế đại cương	2	24C07	1/25-26				T3 13:30-17:10 (I.12A)		PXKiên		
+2	BAA00030	Giáo dục quốc phòng - An ninh	4	24CTT_DKD	1/25-26								
+3	CSC10009	Hệ thống máy tính	2	24C10	1/25-26				T7 13:30-17:10 (I.34)		LQHòa		NHBLong
+4	CSC10014	Tư duy tính toán	4	24C10	1/25-26				T5 07:30-11:10 (I.11A)	T2 15:30-17:30 (C.23A)	NTiếnHuy	LTTùng
+THQuân	LTTùng
+5	MTH00006	Vi tích phân 2	4	24C07	1/25-26				T5 13:30-17:10 (I.32)	T3 09:30-11:30 (I.23)	NVHuy	LTTNhung	
+Copyright 2025 by Chương trình đề án - Khoa CNTT, ĐH.KHTN
