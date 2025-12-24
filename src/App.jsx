@@ -191,73 +191,71 @@ function App() {
                       'dateTime': `${`${st.toISOString().split("T")[0]}T${theory[1].split("-")[1]}:00+07:00`}`,
                       'timeZone': 'Asia/Ho_Chi_Minh'
                     },
-                    // 'recurrence': [
-                    //     `RRULE:FREQ=WEEKLY;UNTIL=${endDate.replace(/-/g, "")}T165959;BYDAY=${mapping[theory[0]] || "MO"}`
-                    // ]
+                    'recurrence': [
+                        `RRULE:FREQ=WEEKLY;UNTIL=${endDate.replace(/-/g, "")}T165959Z;BYDAY=${mapping[theory[0]] || "MO"}`
+                    ]
                   };
 
                 console.log(event);
-                try{
-                    const addEventRes = await fetch(`https://www.googleapis.com/calendar/v3/calendars/${newCalendarId}/events`, {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${accessToken}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(event)
-                    });
-                    await delay(2000);
-                    if(check) check = addEventRes.ok;
-                }catch (error) {
-                    alert("Lỗi " + error);
-                }
+                
+                const addEventRes = await fetch(`https://www.googleapis.com/calendar/v3/calendars/${newCalendarId}/events`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(event)
+                });
+                await delay(2000);
+                if(check) check = addEventRes.ok;
+                
             }
 
-            // if(experiment[0] !== ""){
-            //     const st = new Date(startDate);
-            //     while (st.getDay() !== convert[experiment[0]]) { 
-            //         st.setDate(st.getDate() + 1);
-            //     }
-            //     st.setDate(st.getDate() + 7);
+            if(experiment[0] !== ""){
+                const st = new Date(startDate);
+                while (st.getDay() !== convert[experiment[0]]) { 
+                    st.setDate(st.getDate() + 1);
+                }
+                st.setDate(st.getDate() + 7);
 
-            //     const event = {
-            //         'summary': `${line[2]} (Thực Hành)`,
-            //         'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${experiment[2].replace(/[()]/g, "")}\nGV:${line[12]}\nGVTG:${((line[13].length !== 0) ? (line[13]) : "")}`,
-            //         'start': {
-            //           'dateTime': `${`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[0]}:00+07:00`}`,
-            //           'timeZone': 'Asia/Ho_Chi_Minh'
-            //         },
-            //         'end': {
-            //           'dateTime': `${`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[1]}:00+07:00`}`,
-            //           'timeZone': 'Asia/Ho_Chi_Minh'
-            //         },
-            //         'recurrence': [
-            //             `RRULE:FREQ=WEEKLY;UNTIL=${endDate.replace(/-/g, "")}T165959;BYDAY=${mapping[theory[0]] || "MO"}`
-            //         ]
-            //     };
-            //     console.log(event);
+                const event = {
+                    'summary': `${line[2]} (Thực Hành)`,
+                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${experiment[2].replace(/[()]/g, "")}\nGV:${line[12]}\nGVTG:${((line[13].length !== 0) ? (line[13]) : "")}`,
+                    'start': {
+                      'dateTime': `${`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[0]}:00+07:00`}`,
+                      'timeZone': 'Asia/Ho_Chi_Minh'
+                    },
+                    'end': {
+                      'dateTime': `${`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[1]}:00+07:00`}`,
+                      'timeZone': 'Asia/Ho_Chi_Minh'
+                    },
+                    'recurrence': [
+                        `RRULE:FREQ=WEEKLY;UNTIL=${endDate.replace(/-/g, "")}T165959Z;BYDAY=${mapping[experiment[0]] || "MO"}`
+                    ]
+                };
+                console.log(event);
 
-            //     const addEventRes = await fetch(`https://www.googleapis.com/calendar/v3/calendars/${newCalendarId}/events`, {
-            //     method: 'POST',
-            //     headers: {
-            //         'Authorization': `Bearer ${accessToken}`,
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify(event)
-            //     });
-            //     await delay(3000);
-            //     if(check) check = addEventRes.ok;
+                const addEventRes = await fetch(`https://www.googleapis.com/calendar/v3/calendars/${newCalendarId}/events`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(event)
+                });
+                await delay(2000);
+                if(check) check = addEventRes.ok;
 
-            //     console.log(event);
-            // }
+                console.log(event);
+            }
 
             startIdx++;
         }
 
-        // if(check)
-        //   alert("Đã thêm lịch");
-        // else 
-        //   alert("Lỗi");
+        if(check)
+          alert("Đã thêm lịch");
+        else 
+          alert("Lỗi");
       } catch (error) {
         alert("Lỗi: " + error);
       }
