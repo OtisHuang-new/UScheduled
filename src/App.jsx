@@ -309,7 +309,7 @@ function App() {
                     
                     {!accessToken ? (
                         <button className="w-full px-[20px] py-[10px] text-[16px] cursor-pointer bg-[#4285F4] text-white border-none rounded-[5px] hover:bg-[#357ae8] transition-colors" onClick={handleConnect}>
-                            Kết nối Google
+                            Kết nối với Google
                         </button>
                     ) : (
                         <button 
