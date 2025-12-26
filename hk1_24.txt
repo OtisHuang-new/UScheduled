@@ -1,0 +1,19 @@
+ Nguyễn Thanh Trúc   Logout    
+Trang Chủ
+Sinh Viên
+Thư Viện
+Hướng dẫn
+Kết Quả ĐKHP  Sinh Viên  /  Đăng Ký Học Phần  /  Kết Quả ĐKHP
+
+HK1 2024-2025
+CÁC MÔN ĐÃ ĐĂNG KÝ
+24127137 - NGUYỄN THANH TRÚC
+#	Mã MH	Tên MH	TC	Lớp HP	Học Kỳ	TA	HL	I2	Lịch LT	Lịch TH	GV-LT	GV-TH	GV-TG
+1	CSC00004	Nhập môn Công nghệ thông tin	4	24C10	1/24-25				T7 07:30-11:10 (B.11A)	T4 07:30-09:30 (I.61)	PNCương	LNHNam
+TGHồng	LNHNam
+2	CSC10012	Cơ sở lập trình	4	24C10	1/24-25				T2 07:30-11:10 (I.34)	T4 13:30-15:30 (I.62)	LNThành	LNNam
+NTTình	LNNam
+3	CSC10121	Kỹ năng mềm	3	24C10	1/24-25				T2 13:30-17:10 (I.91)	T7 13:30-15:30 (I.41)	ĐNHDương	LNTNhi
+ĐHThương	LNTNhi
+4	MTH00009	Toán rời rạc	4	24C07	1/24-25				T5 07:30-11:10 (I.32)	T4 09:30-11:30 (E.302)	NKNgọc	LQTrường	
+Copyright 2025 by Chương trình đề án - Khoa CNTT, ĐH.KHTN

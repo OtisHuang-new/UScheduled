@@ -1,0 +1,17 @@
+ Nguyễn Thanh Trúc   Logout    
+Trang Chủ
+Sinh Viên
+Thư Viện
+Hướng dẫn
+Kết Quả ĐKHP  Sinh Viên  /  Đăng Ký Học Phần  /  Kết Quả ĐKHP
+
+HK3 2024-2025
+CÁC MÔN ĐÃ ĐĂNG KÝ
+24127137 - NGUYỄN THANH TRÚC
+#	Mã MH	Tên MH	TC	Lớp HP	Học Kỳ	TA	HL	I2	Lịch LT	Lịch TH	GV-LT	GV-TH	GV-TG
+1	CSC10003	Phương pháp lập trình hướng đối tượng	4	24C10	3/24-25				T3 13:30-17:10 (I.35)	T4 13:30-15:30 (I.62)	BTLên	TTKhoa
+VoNTân	TTKhoa
+2	CSC10008	Mạng máy tính	4	24C10	3/24-25				T7 07:30-11:10 (I.92)		NTQuân	NTQuân	LNSơn
+3	MTH00005	Vi tích phân 1	4	24C07	3/24-25				T3 07:30-11:10 (I.92)	T4 15:30-17:30 (I.12A)	LAHa	LTTNhung	
+4	MTH00008	Đại số tuyến tính	4	24C07	3/24-25				T2 13:30-17:10 (B.11A)	T2 07:30-09:30 (C.22)	NAThi	NAThi	
+Copyright 2025 by Chương trình đề án - Khoa CNTT, ĐH.KHTN

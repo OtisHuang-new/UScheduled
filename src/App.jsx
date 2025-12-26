@@ -54,6 +54,7 @@ function App() {
     }
     const createCalendarToFile = () => {
         try{
+            if(startDate > endDate) throw new Error("Ngày bắt đầu hoặc ngày kết thúc không hợp lệ");
             const splited = handleSplit();
             const lines = splited.lines;
             let startIdx = splited.startIdx;
@@ -150,6 +151,7 @@ function App() {
       if (!accessToken) return alert("Vui lòng kết nối Google trước!");
       setIsLoading(true);
       try {
+        if(startDate > endDate) throw new Error("Ngày bắt đầu hoặc ngày kết thúc không hợp lệ");
         const splited = handleSplit();
         const lines = splited.lines;
         let startIdx = splited.startIdx;
@@ -185,7 +187,7 @@ function App() {
                 }
                 const event = {
                     'summary': `${line[2]} (Lý thuyết)`,
-                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${theory[2].replace(/[()]/g, "")}\nGV:${line[11]}\nGVTG:${((line[13].length !== 0) ? (line[13]) : "")}`,
+                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${theory[2].replace(/[()]/g, "")}\nGV: ${line[11]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
                     'start': {
                       'dateTime': `${`${st.toISOString().split("T")[0]}T${theory[1].split("-")[0]}:00+07:00`}`,
                       'timeZone': 'Asia/Ho_Chi_Minh'
@@ -223,7 +225,7 @@ function App() {
 
                 const event = {
                     'summary': `${line[2]} (Thực Hành)`,
-                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${experiment[2].replace(/[()]/g, "")}\nGV:${line[12]}\nGVTG:${((line[13].length !== 0) ? (line[13]) : "")}`,
+                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${experiment[2].replace(/[()]/g, "")}\nGV: ${line[12]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
                     'start': {
                       'dateTime': `${`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[0]}:00+07:00`}`,
                       'timeZone': 'Asia/Ho_Chi_Minh'

@@ -1,0 +1,17 @@
+ Nguyễn Thanh Trúc   Logout    
+Trang Chủ
+Sinh Viên
+Thư Viện
+Hướng dẫn
+Kết Quả ĐKHP  Sinh Viên  /  Đăng Ký Học Phần  /  Kết Quả ĐKHP
+
+HK2 2024-2025
+CÁC MÔN ĐÃ ĐĂNG KÝ
+24127137 - NGUYỄN THANH TRÚC
+#	Mã MH	Tên MH	TC	Lớp HP	Học Kỳ	TA	HL	I2	Lịch LT	Lịch TH	GV-LT	GV-TH	GV-TG
+1	BAA00004	Pháp luật đại cương	3	24C05	2/24-25				T7 13:30-17:10 (C.33)		MLPhương		
+2	CSC10004	Cấu trúc dữ liệu và giải thuật	4	24C10	2/24-25				T5 07:30-11:10 (I.91)	T6 13:30-15:30 (I.61)	LTTùng	NTDMinh
+NTTình	NTTình
+3	MTH00058	Toán học tổ hợp	4	24C07	2/24-25				T2 07:30-11:10 (I.35)	T3 13:30-15:30 (I.35)	PTNhân	PTNhân	
+4	PHY00005	Vật lý đại cương 1	4	24C07	2/24-25				T2 13:30-17:10 (I.35)	T6 09:30-11:30 (I.12C)	THLăng	THNThy	
+Copyright 2025 by Chương trình đề án - Khoa CNTT, ĐH.KHTN
