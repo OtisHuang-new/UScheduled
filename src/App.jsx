@@ -324,7 +324,7 @@ function App() {
                     )}
                 </div>  
                 <div className='text-[13px] text-gray-400'>
-                    Nhấp {<a href="https://forms.gle/aKpYLxBNPGf6tryQ9" target="_blank" rel="noopener noreferrer" className='text-blue-400 hover:underline'>tại đây</a>} để gửi feed back cho mình nha, thank iu.
+                    Nhấp {<a href="https://forms.gle/aKpYLxBNPGf6tryQ9" target="_blank" rel="noopener noreferrer" className='text-blue-400 hover:underline'>tại đây</a>} để gửi feedback cho mình nha, thank iu.
                 </div>
             </div>
         </div>
