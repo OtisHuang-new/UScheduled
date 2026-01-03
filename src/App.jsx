@@ -3,10 +3,10 @@ import { useState } from 'react';
 function App() {
     const [isLoading, setIsLoading] = useState(false);
     const [content, setContent] = useState("");
-    const [startDate, setStartDate] = useState("2025-01-01");
-    const [endDate, setEndDate] = useState("2025-01-01");
+    const [startDate, setStartDate] = useState(`${new Date().getFullYear()}-01-01`);
+    const [endDate, setEndDate] = useState(`${new Date().getFullYear()}-01-01`);
     const start_line = "#	Mã MH	Tên MH	TC	Lớp HP	Học Kỳ	TA	HL	I2	Lịch LT	Lịch TH	GV-LT	GV-TH	GV-TG";
-    const end_line = "Copyright 2025 by Chương trình đề án - Khoa CNTT, ĐH.KHTN";
+    const end_line = `Copyright ${new Date().getFullYear()} by Chương trình đề án - Khoa CNTT, ĐH.KHTN`;
     const mapping = { "T2": "MO", "T3": "TU", "T4": "WE", "T5": "TH", "T6": "FR", "T7": "SA", "CN": "SU" };
     const convert = { "T2": 1, "T3": 2, "T4": 3, "T5": 4, "T6": 5, "T7": 6, "CN": 0 };
     
@@ -81,7 +81,7 @@ function App() {
                     let event = myEvent;
                     event   +=`UID:LT${line[0] + line[1]}@myCalendar.com\n`
                             +`SUMMARY:${line[2]} (Lý thuyết)\n`
-                            +`DESCRIPTION:Mã môn học: ${line[1]}\\nSố tín chỉ: ${line[3]}\\nPhòng: ${theory[2].replace(/[()]/g, "")}\\n`
+                            +`DESCRIPTION:Mã môn học: ${line[1]}\\nSố tín chỉ: ${line[3]}\\nPhòng: ${theory[2] ? theory[2].replace(/[()]/g, "") : "Chưa cập nhật"}\\n`
                             +`GV:${line[11]}\\nGVTG:${((line[13].length !== 0) ? (line[13]) : "")}\n`
                             +`DTSTART:${new Date(`${st.toISOString().split("T")[0]}T${theory[1].split("-")[0]}:00+07:00`).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"}\n`
                             +`DTEND:${new Date(`${st.toISOString().split("T")[0]}T${theory[1].split("-")[1]}:00+07:00`).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"}\n`
@@ -100,7 +100,7 @@ function App() {
                     let event = myEvent;
                     event   +=`UID:TH${line[0] + line[1]}@myCalendar.com\n`
                             +`SUMMARY:${line[2]} (Thực Hành)\n`
-                            +`DESCRIPTION:Mã môn học: ${line[1]}\\nSố tín chỉ: ${line[3]}\\nPhòng: ${experiment[2].replace(/[()]/g, "")}\\n`
+                            +`DESCRIPTION:Mã môn học: ${line[1]}\\nSố tín chỉ: ${line[3]}\\nPhòng: ${experiment[2] ? experiment[2].replace(/[()]/g, "") : "Chưa cập nhật"}\\n`
                             +`GV:${line[12]}\\nGVTG:${((line[13].length !== 0) ? (line[13]) : "")}\n`
                             +`DTSTART:${new Date(`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[0]}:00+07:00`).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"}\n`
                             +`DTEND:${new Date(`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[1]}:00+07:00`).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"}\n`
@@ -187,7 +187,7 @@ function App() {
                 }
                 const event = {
                     'summary': `${line[2]} (Lý thuyết)`,
-                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${theory[2].replace(/[()]/g, "")}\nGV: ${line[11]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
+                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${theory[2] ? theory[2].replace(/[()]/g, "") : "Chưa cập nhật"}\nGV: ${line[11]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
                     'start': {
                       'dateTime': `${`${st.toISOString().split("T")[0]}T${theory[1].split("-")[0]}:00+07:00`}`,
                       'timeZone': 'Asia/Ho_Chi_Minh'
@@ -225,7 +225,7 @@ function App() {
 
                 const event = {
                     'summary': `${line[2]} (Thực Hành)`,
-                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${experiment[2].replace(/[()]/g, "")}\nGV: ${line[12]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
+                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${experiment[2] ? experiment[2].replace(/[()]/g, "") : "Chưa cập nhật"}\nGV: ${line[12]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
                     'start': {
                       'dateTime': `${`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[0]}:00+07:00`}`,
                       'timeZone': 'Asia/Ho_Chi_Minh'
