@@ -61,7 +61,7 @@ function App() {
             let myCalendar = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//MyReactApp//NONSGML v1.0//EN\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nX-WR-CALNAME:${"Thời khóa biểu " + lines[startIdx - 4]}\nX-WR-TIMEZONE:Asia/Ho_Chi_Minh\n`;
             const fileName = `UScheduled_${lines[startIdx - 4]}`;
 
-            while(lines[startIdx] !== end_line && startIdx < lines.length){
+            while(lines[startIdx] !== end_line && startIdx < lines.length - 1){
                 const line = lines[startIdx].split('\t');
 
 
@@ -175,7 +175,7 @@ function App() {
         let check = true;
         const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-        while(lines[startIdx] !== end_line && startIdx < lines.length){
+        while(lines[startIdx] !== end_line && startIdx < lines.length - 1){
             const line = lines[startIdx].split('\t');
 
             let theory = line[9] !== "" ? line[9].split(" ") : [""];
