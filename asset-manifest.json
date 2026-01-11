@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/UScheduled/static/css/main.1d6cfd23.css",
-    "main.js": "/UScheduled/static/js/main.b6837c1c.js",
+    "main.js": "/UScheduled/static/js/main.40aa57d4.js",
     "index.html": "/UScheduled/index.html",
     "main.1d6cfd23.css.map": "/UScheduled/static/css/main.1d6cfd23.css.map",
-    "main.b6837c1c.js.map": "/UScheduled/static/js/main.b6837c1c.js.map"
+    "main.40aa57d4.js.map": "/UScheduled/static/js/main.40aa57d4.js.map"
   },
   "entrypoints": [
     "static/css/main.1d6cfd23.css",
-    "static/js/main.b6837c1c.js"
+    "static/js/main.40aa57d4.js"
   ]
 }
