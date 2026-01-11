@@ -81,8 +81,8 @@ function App() {
                     let event = myEvent;
                     event   +=`UID:LT${line[0] + line[1]}@myCalendar.com\n`
                             +`SUMMARY:${line[2]} (Lý thuyết)\n`
-                            +`DESCRIPTION:Mã môn học: ${line[1]}\\nSố tín chỉ: ${line[3]}\\nPhòng: ${theory[2] ? theory[2].replace(/[()]/g, "") : "Chưa cập nhật"}\\n`
-                            +`GV:${line[11]}\\nGVTG:${((line[13].length !== 0) ? (line[13]) : "")}\n`
+                            +`DESCRIPTION:Mã môn học: ${line[1]}\\nSố tín chỉ: ${line[3]}\\nGV: ${line[11]}\\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}\n`
+                            +`LOCATION:${theory[2] ? theory[2].replace(/[()]/g, "") : "Chưa cập nhật"}\n`
                             +`DTSTART:${new Date(`${st.toISOString().split("T")[0]}T${theory[1].split("-")[0]}:00+07:00`).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"}\n`
                             +`DTEND:${new Date(`${st.toISOString().split("T")[0]}T${theory[1].split("-")[1]}:00+07:00`).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"}\n`
                             +`RRULE:FREQ=WEEKLY;UNTIL=${new Date(`${endDate}T23:59:00+07:00`).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"};BYDAY=${mapping[theory[0]] || "MO"}\n`
@@ -100,8 +100,8 @@ function App() {
                     let event = myEvent;
                     event   +=`UID:TH${line[0] + line[1]}@myCalendar.com\n`
                             +`SUMMARY:${line[2]} (Thực Hành)\n`
-                            +`DESCRIPTION:Mã môn học: ${line[1]}\\nSố tín chỉ: ${line[3]}\\nPhòng: ${experiment[2] ? experiment[2].replace(/[()]/g, "") : "Chưa cập nhật"}\\n`
-                            +`GV:${line[12]}\\nGVTG:${((line[13].length !== 0) ? (line[13]) : "")}\n`
+                            +`DESCRIPTION:Mã môn học: ${line[1]}\\nSố tín chỉ: ${line[3]}\\nGV: ${line[12]}\\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}\n`
+                            +`LOCATION:${experiment[2] ? experiment[2].replace(/[()]/g, "") : "Chưa cập nhật"}\n`
                             +`DTSTART:${new Date(`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[0]}:00+07:00`).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"}\n`
                             +`DTEND:${new Date(`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[1]}:00+07:00`).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"}\n`
                             +`EXDATE:${startDate.replace(/-/g,"")}\n`
@@ -187,7 +187,8 @@ function App() {
                 }
                 const event = {
                     'summary': `${line[2]} (Lý thuyết)`,
-                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${theory[2] ? theory[2].replace(/[()]/g, "") : "Chưa cập nhật"}\nGV: ${line[11]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
+                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nGV: ${line[11]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
+                    'location': `${theory[2] ? theory[2].replace(/[()]/g, "") : "Chưa cập nhật"}`,
                     'start': {
                       'dateTime': `${`${st.toISOString().split("T")[0]}T${theory[1].split("-")[0]}:00+07:00`}`,
                       'timeZone': 'Asia/Ho_Chi_Minh'
@@ -225,7 +226,8 @@ function App() {
 
                 const event = {
                     'summary': `${line[2]} (Thực Hành)`,
-                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nPhòng: ${experiment[2] ? experiment[2].replace(/[()]/g, "") : "Chưa cập nhật"}\nGV: ${line[12]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
+                    'description': `Mã môn học: ${line[1]}\nSố tín chỉ: ${line[3]}\nGV: ${line[12]}\nGVTG: ${((line[13].length !== 0) ? (line[13]) : "")}`,
+                    'location': `${experiment[2] ? experiment[2].replace(/[()]/g, "") : "Chưa cập nhật"}`,
                     'start': {
                       'dateTime': `${`${st.toISOString().split("T")[0]}T${experiment[1].split("-")[0]}:00+07:00`}`,
                       'timeZone': 'Asia/Ho_Chi_Minh'
@@ -270,8 +272,8 @@ function App() {
     return (
         <>
         <div className="flex h-screen items-center justify-center bg-gray-100 gap-6">
-            <div className="w-[400px] bg-white p-4 shadow-lg rounded-lg">
-                <div className="flex flex-col gap-2">
+            <div className="w-[400px] bg-white p-4 shadow-lg rounded-lg flex flex-col gap-2">
+                <div className="flex flex-col">
                     <label className="font-bold">Chọn ngày bắt đầu học kỳ:</label>
                     <input 
                     type="date" 
@@ -280,7 +282,7 @@ function App() {
                     onChange={(e) => setStartDate(e.target.value)}
                     />
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col">
                     <label className="font-bold">Chọn ngày kết thúc học kỳ:</label>
                     <input 
                     type="date" 
@@ -289,22 +291,24 @@ function App() {
                     onChange={(e) => setEndDate(e.target.value)}
                     />
                 </div>
-                <label className="font-bold">
-                    Thời khóa biểu của bạn:
-                </label>
+                <div>
+                    <label className="font-bold">
+                        Thời khóa biểu của bạn:
+                    </label>
+                    <textarea 
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)} 
+                        className="w-full h-32 p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+                        placeholder="Ctrl+A và dán toàn bộ thời khóa biểu vào đây"
+                    ></textarea>
+                </div>
                 
-                <textarea 
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)} 
-                    className="w-full h-32 p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
-                    placeholder="Ctrl+A và dán toàn bộ thời khóa biểu vào đây"
-                ></textarea>
                 
                 <button 
                     className="mt-3 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition" 
                     onClick={createCalendarToFile}
                 >
-                    Tải xuống thời khóa biểu
+                    Tải xuống lịch định dạng .ics
                 </button>
                 <div className='p-[20px] items-center'>
                     <p>Trạng thái: <strong>{status}</strong></p>
